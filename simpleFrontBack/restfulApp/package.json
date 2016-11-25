@@ -1,0 +1,12 @@
+{
+  "name": "restfulApp",
+  "description": "Testi restful app",
+  "version": "0.1.0",
+  "scripts": {
+    "start":"node app.js"
+  },
+  "dependencies": {
+    "restify": "*",
+    "mongoose": "*"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "restfulFront",
+  "description": "Testi restful front",
+  "version": "0.1.0",
+  "scripts": {
+    "start":"node server.js"
+  },
+  "dependencies": {
+    "express": "*",
+	"body-parser": "*"
+  }
+}
