@@ -78,6 +78,20 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
       icon: 'hangout'
     }];
 
+    $scope.cities = [{
+      name: 'Tampere',
+    }, {
+      name: 'Kittilä'
+    }];
+
+    $scope.selectedCity = { name: 'Tampere'};
+
+    $scope.getWeather = function(){
+      $http.get().success(function(response){
+
+      });
+    };
+
     $scope.$watch(function () {
       for (var i = 0; i < $scope.sites.length; i += 1) {
         if ($scope.sites[i].active) {
