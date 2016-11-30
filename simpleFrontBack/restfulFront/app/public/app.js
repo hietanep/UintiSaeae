@@ -9,7 +9,7 @@
  myApp.value('globaalit', {
     appName: 'restful Front',
     appVersion: 0.1,
-    restUrl: 'http://localhost:3000'
+    restUrl: 'http://192.168.99.100:3000'
 });
 
  
