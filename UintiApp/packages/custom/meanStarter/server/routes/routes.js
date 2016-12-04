@@ -8,7 +8,7 @@ module.exports = function (MeanStarter, app) {
     return res.send('welcome to REST API');
   });
 
-  app.get('/api/fmi/:location', function (req, res, next) {
+  app.get('/api/swim-weather/:location', function (req, res, next) {
 
     var location = req.params.location;
 

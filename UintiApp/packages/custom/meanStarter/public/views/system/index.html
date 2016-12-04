@@ -3,12 +3,12 @@
     <p class="md-subhead">
 
       <md-input-container>
-        <label>Choose city</label>
+        <label>I want to swim in...</label>
         <md-select ng-model="selectedCity">
           <md-option ng-value="city" ng-repeat="city in cities">{{city.name}}</md-option>
         </md-select>
       </md-input-container>
-      <md-button class="md-primary" type="submit" ng-click="getWeather()">Submit</md-button>
+      <md-button class="md-primary" type="submit" ng-click="getSwimWeather()">Submit</md-button>
 
     </p>
 

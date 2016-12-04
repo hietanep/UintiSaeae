@@ -86,12 +86,10 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
 
     $scope.selectedCity = { name: 'Tampere'};
 
-    $scope.getWeather = function(){
+    $scope.getSwimWeather = function(){
       console.log('clicked');
 
-      $http.get().success(function(response){
-
-      });
+      SwimWeatherService.get($scope.selectedCity.name);
     };
 
     $scope.$watch(function () {
