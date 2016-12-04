@@ -14,7 +14,5 @@ module.exports = function (MeanStarter, app) {
 
     return swimWeather.getSwimWeather(location);
 
-    //return res.send(getJSONDataFromUrl(location));
-
   });
 };
