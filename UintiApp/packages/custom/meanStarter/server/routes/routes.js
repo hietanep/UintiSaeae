@@ -12,7 +12,9 @@ module.exports = function (MeanStarter, app) {
 
     var location = req.params.location;
 
-    return swimWeather.getSwimWeather(location);
+    swimWeather.getSwimWeather(location, function(data) {
+      res.json(data);
+    });
 
   });
 };

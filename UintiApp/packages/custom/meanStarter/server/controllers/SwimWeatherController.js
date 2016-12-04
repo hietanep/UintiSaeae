@@ -3,23 +3,37 @@
 var waterQuality = require('../controllers/WaterQualityController');
 var weather = require('../controllers/WeatherController');
 
-exports.getSwimWeather = function(location) {
-  var swimWeatherData = {};
+var weatherData = {};
+var waterQualityData = {};
 
-  var weatherData = weather.getWeather(location);
+exports.getSwimWeather = function(location, callback) {
+  weather.getWeather(location, function(data) {
+    weatherData = data;
 
-  var waterQualityData = waterQuality.getWaterQuality(location);
+    complete(callback);
+  });
 
-  swimWeatherData = combineData(weatherData, waterQualityData);
+  waterQuality.getWaterQuality(location, 10, function(data) {
+    waterQualityData = data;
 
-  return swimWeatherData;
+    complete(callback);
+  });
 
 }
 
-function combineData(weather, quality) {
+function combineData() {
   var combinedData = {};
 
   // combined = weather + quality
 
   return combinedData;
+}
+
+function complete(callback) {
+  var combinedData = {};
+  if(weatherData !== null && waterQualityData !== null) {
+    combinedData = combineData();
+
+    callback(combinedData);
+  }
 }

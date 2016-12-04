@@ -3,7 +3,7 @@
 var restify = require('restify');
 var config = require('../config/config.json');
 
-exports.getWeather = function(location) {
+exports.getWeather = function(location, callback) {
   var weather = {};
 
   var client = restify.createStringClient({
@@ -12,9 +12,9 @@ exports.getWeather = function(location) {
 
   client.get('/fmi-apikey/'+config.fmiKey+'/wfs?request=getFeature&storedquery_id=fmi::forecast::hirlam::surface::point::multipointcoverage&parameters=temperature&place='+location, function(err, req, res, data) {
     weather = data;
-  });
 
-  return weather;
+    return weather;
+  });
 };
 
 
