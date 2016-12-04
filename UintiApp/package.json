@@ -22,6 +22,7 @@
     "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
+    "async": "latest",
     "angular": "^1.5.5",
     "angular-animate": "^1.5.8",
     "angular-aria": "^1.5.8",
@@ -53,6 +54,7 @@
     "meanio-circles": "git://github.com/linnovate/meanio-circles.git",
     "meanio-system": "git://github.com/linnovate/meanio-system.git",
     "meanio-users": "git://github.com/linnovate/meanio-users.git",
+	"mongoose": "latest",
     "morgan": "^1.7.0",
     "npm": "^3.10.7",
     "protractor": "^4.0.8",
@@ -60,6 +62,7 @@
     "request": "^2.76.0",
     "shelljs": "^0.7.5",
     "snyk": "^1.17.5",
+	"swig": "latest",
     "view-helpers": "0.1.5"
   },
   "devDependencies": {
@@ -116,5 +119,5 @@
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
   },
-  "snyk": true
+  "snyk": false
 }
