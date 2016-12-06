@@ -11,6 +11,7 @@ exports.getWaterQuality = function(location, limit, callback) {
 };
 
 function getCleanWaters(location) {
+  /*
   var cleanWaters = [];
 
   var client = restify.createJsonClient({
@@ -27,7 +28,40 @@ function getCleanWaters(location) {
     }
 
     return cleanWaters;
+
   });
+  */
+
+  var cleanWaters = [];
+
+  var http = require('http');
+  var serviceRoot = 'http://rajapinnat.ymparisto.fi/api/Kasviplanktonrajapinta/1.0/odata/';
+  getURL(serviceRoot + 'AlgaBloomObservation?$top=20&$filter=Municipal%20eq%20%27' + location + '%27%20and%20AlgaBloomIntensity/AlgaBloomIntensity_Id%20eq%200');
+  function getURL(url) {
+    var body = '';
+    http.get(url, function (response) {
+      response.on('data', function (chunk) {
+        body += chunk;
+      });
+      response.on('end', function () {
+        console.log(body);
+      });
+    }).on('error', function (e) {
+      console.log('ERROR: ' + e.message);
+    });
+
+    console.log("funktio end");
+    //return  body;
+  }
+    /*
+     body.value.forEach(function (element) {
+     console.log(element.Site);
+     cleanWaters.push(element.Site);
+     });
+     */
+
+    //cleanWaters.push(body.value);
+    //return cleanWaters;
 }
 
 function getWarmWaters(location, limit) {
