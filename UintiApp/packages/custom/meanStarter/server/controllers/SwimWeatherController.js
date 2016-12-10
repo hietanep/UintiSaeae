@@ -24,7 +24,8 @@ exports.getSwimWeather = function(location, minTemp, callback) {
 function combineData() {
   var combinedData = {};
 
-  // combined = weather + quality
+  combinedData.weatherData = weatherData;
+  combinedData.waterQualityData = waterQualityData;
 
   return combinedData;
 }

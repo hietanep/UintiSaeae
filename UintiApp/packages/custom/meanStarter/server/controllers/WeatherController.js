@@ -41,6 +41,8 @@ function findWarmestHour(data) {
 
   warmestHour = warmestHour.substring((warmestHour.lastIndexOf(' ') + 1), warmestHour.length);
 
+  warmestHour = new Date(warmestHour * 1000);
+
   return warmestHour;
 }
 

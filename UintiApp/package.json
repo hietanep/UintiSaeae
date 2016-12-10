@@ -65,7 +65,8 @@
     "snyk": "^1.17.5",
 	"swig": "latest",
     "view-helpers": "0.1.5",
-    "xmldoc": "latest"
+    "xmldoc": "latest",
+    "array-unique": "latest"
   },
   "devDependencies": {
     "babel-core": "^6.18.0",
