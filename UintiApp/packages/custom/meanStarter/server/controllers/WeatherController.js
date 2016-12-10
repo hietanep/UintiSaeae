@@ -40,10 +40,11 @@ function findWarmestHour(data) {
   var warmestHour = hourArr[warmestHourIndex];
 
   warmestHour = warmestHour.substring((warmestHour.lastIndexOf(' ') + 1), warmestHour.length);
-
   warmestHour = new Date(warmestHour * 1000);
 
-  return warmestHour;
+  var maxTempTime = {time: warmestHour, temp: maxTemp};
+
+  return maxTempTime;
 }
 
 

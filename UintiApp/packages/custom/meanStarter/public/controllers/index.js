@@ -7,14 +7,21 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
     $scope.temperatures = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
 
     $scope.cities = [{
-      name: 'Tampere',
+      name: 'Tampere'
     }, {
-      name: 'Kittilä'
+      name: 'Rovaniemi'
+    }, {
+      name: 'Helsinki'
+    }, {
+      name: 'Hämeenlinna'
+    }, {
+      name: 'Salla'
     }];
 
     $scope.selectedCity = $scope.cities[0];
 
     $scope.whenToSwim = null;
+    $scope.swimInfo = null;
 
     $scope.selectedTemperature = 15;
 
@@ -23,12 +30,22 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
 
       SwimWeatherService.get($scope.selectedCity.name, $scope.selectedTemperature, function(response) {
         console.log(response);
-        $scope.placesToSwim = response.data.waterQualityData;
-        $scope.whenToSwim = response.data.weatherData;
+
+        if(response.data.waterQualityData) {
+          $scope.placesToSwim = response.data.waterQualityData.data;
+
+          if(response.data.waterQualityData.type == "clean")
+            $scope.swimInfo = "The following waters are clean of algae but not warm enough: ";
+          else if(response.data.waterQualityData.type == "warm")
+            $scope.swimInfo = "The following waters are warm enough but have not been measured clean recently: ";
+          else if(response.data.waterQualityData.type == "both")
+            $scope.swimInfo = "The following waters have been observed warm and clean: ";
+        }
+        else
+          $scope.swimInfo = "No warm or clean water bodies found. Swim in the nearest fountain at your own risk.";
+
+        $scope.whenToSwim = "Warmest weather for swimming in the next 36 hours is " + response.data.weatherData.temp + " °C at: " + response.data.weatherData.time;
       });
-
-      return $scope.placesToSwim;
-
     };
 
   }

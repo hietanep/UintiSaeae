@@ -20,9 +20,13 @@
     </p>
 
     <p class="md-subhead">
-      <div ng-repeat="placeToSwim in placesToSwim">
-        {{placeToSwim.name}}
-      </div>
+    {{swimInfo}}
+      <md-list>
+        <md-list-item ng-repeat="placeToSwim in placesToSwim">
+          {{placeToSwim}}
+        </md-list-item>
+      </md-list>
+      {{whenToSwim}}
     </p>
 
   </md-content>
