@@ -12,7 +12,9 @@ module.exports = function (MeanStarter, app) {
 
     var location = req.params.location;
 
-    swimWeather.getSwimWeather(location, function(data) {
+    var minTemp = req.query.minTemp;
+
+    swimWeather.getSwimWeather(location, minTemp, function(data) {
       res.json(data);
     });
 

@@ -1,15 +1,22 @@
 <div layout="column" flex data-ng-controller="IndexController">
   <md-content layout="column" layout-padding flex>
     <p class="md-subhead">
-
-      <md-input-container>
-        <label>I want to swim in...</label>
-        <md-select ng-model="selectedCity">
-          <md-option ng-value="city" ng-repeat="city in cities">{{city.name}}</md-option>
-        </md-select>
-      </md-input-container>
-      <md-button class="md-primary" type="submit" ng-click="getSwimWeather()">Submit</md-button>
-
+      Choose your swim city and minimum water temperature
+      <div>
+        <md-input-container>
+          <label>City</label>
+          <md-select ng-model="selectedCity">
+            <md-option ng-value="city" ng-repeat="city in cities">{{city.name}}</md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container>
+          <label>°C</label>
+          <md-select ng-model="selectedTemperature">
+            <md-option ng-value="temperature" placeholder="1" ng-repeat="temperature in temperatures">{{temperature}}</md-option>
+          </md-select>
+        </md-input-container>
+        <md-button class="md-primary" type="submit" ng-click="getSwimWeather()">Submit</md-button>
+      </div>
     </p>
 
     <p class="md-subhead">
