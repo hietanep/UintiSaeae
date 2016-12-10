@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('SwimWeatherService', []).factory('SwimWeather', ['$http', function($http) {
+angular.module('mean.meanStarter').factory('SwimWeatherService', ['$http', function($http) {
   return {
     get: function (location) {
       var data = $http.get('/api/swim-weather/' + location);
@@ -10,3 +10,5 @@ angular.module('SwimWeatherService', []).factory('SwimWeather', ['$http', functi
 
   }
 }]);
+
+
