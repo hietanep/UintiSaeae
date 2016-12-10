@@ -35,6 +35,9 @@ function complete(callback) {
   if(weatherData != null && waterQualityData != null) {
     combinedData = combineData();
 
+    weatherData = null;
+    waterQualityData = null;
+
     callback(combinedData);
   }
 }

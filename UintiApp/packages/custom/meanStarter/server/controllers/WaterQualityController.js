@@ -155,6 +155,9 @@ function complete(callback) {
   if(warmWaters != null && cleanWaters != null) {
     combinedData = combineData();
 
+    warmWaters = null;
+    cleanWaters = null;
+
     callback(combinedData);
   }
 }
