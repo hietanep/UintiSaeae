@@ -15,14 +15,33 @@ exports.getWeather = function(location, callback) {
 
 function findWarmestHour(data) {
   var xmldoc = require('xmldoc');
-
   var document = new xmldoc.XmlDocument(data);
-
   var temperatureResults = document.firstChild.firstChild.childNamed('om:result');
+  var temperatures = temperatureResults.firstChild.childNamed('gml:rangeSet').firstChild.childNamed('gml:doubleOrNilReasonTupleList').val;
+  var hours = temperatureResults.firstChild.childNamed('gml:domainSet').firstChild.childNamed('gmlcov:positions').val;
 
-  var hourTemps = temperatureResults.firstChild;
+  var tempArr = temperatures.split('\n                ');
+  var hourArr = hours.split('\n                ');
 
-  console.log(hourTemps);
+  // the first and last elements of the arrays are empty because I don't know where to split
+  tempArr.pop();
+  hourArr.pop();
+  tempArr.splice(0, 1);
+  hourArr.splice(0, 1);
+
+  // there is a space after each tempArr element, trim it off and parse to float
+  for(var i = 0; i<tempArr.length; i++) {
+    tempArr[i] = parseFloat(tempArr[i].trim());
+  }
+
+  var maxTemp = Math.max.apply(null, tempArr);
+  var warmestHourIndex = tempArr.indexOf(maxTemp);
+
+  var warmestHour = hourArr[warmestHourIndex];
+
+  warmestHour = warmestHour.substring((warmestHour.lastIndexOf(' ') + 1), warmestHour.length);
+
+  return warmestHour;
 }
 
 
