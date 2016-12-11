@@ -18,3 +18,10 @@ PH:
 HO:
 - bootstrappiin tutustuminen
 - tarkempi perehtyminen MEAN-sampleen
+
+
+Viikko 48
+
+PH:
+- dokerfilen luonti ja projektin vienti dockerhubiin
+- dokerhubista projeti amatzonin palvelimelle
