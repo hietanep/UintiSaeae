@@ -1,3 +1,12 @@
 .MEAN-Logo {
   height: 80%
 }
+.md-toolbar-tools{
+  background-color: #000000;
+}
+
+.md-button, .ng-scope{
+  color: #000000;
+}
+
+
