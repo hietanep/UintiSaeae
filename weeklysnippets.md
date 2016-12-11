@@ -1,3 +1,8 @@
+Yhteystiedot:
+Päivi Hietanen: paivi.hietanen@student.tut.fi
+Henna Olli: henna.olli@student.tut.fi
+========================================================
+
 Viikko 46 - projektin aloitus viikko
 
 PH:
