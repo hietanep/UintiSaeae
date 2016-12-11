@@ -31,3 +31,8 @@ Viikko 48
 PH:
 - dokerfilen luonti ja projektin vienti dockerhubiin
 - dokerhubista projeti amatzonin palvelimelle
+
+HO:
+- en osaa yhdistää viikkonumeroita menneeseen aikaan
+- todennäköisesti en oppinut juuri mitään
+- viime viikon aikana parsin kuitenkin rajapinnoista dataa ja olin yhdistelevinäni sitä ja angular on näyttävinään sitä
