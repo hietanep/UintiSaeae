@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:boron
 RUN npm install npm@latest
 
 RUN mkdir -p /usr/src/app
