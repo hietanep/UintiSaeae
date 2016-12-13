@@ -15,7 +15,8 @@ RUN chown -R node:node /usr/src/app
 USER node
 RUN touch /home/node/.mean
 RUN npm install 
-COPY ./node_modules/* /usr/src/app/node_modules/
+RUN mkdir -p /usr/src/app/node_modules2/
+COPY ./node_modules/* /usr/src/app/node_modules2/
 ENV PORT 3000  
 ENV DB_PORT_27017_TCP_ADDR db
 CMD [ "gulp" ]
